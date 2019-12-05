@@ -1,0 +1,16 @@
+//@import '~/themes/variables/_theme-two';
+@import '~/_app-variables';
+
+Button.one {
+    background-color: #2f73a3;
+    color: white;
+}
+
+Button.two {
+    background-color: #a3592f;
+    color: white;
+}
+
+ActionBar.action-bar {
+    background-color: $accent;
+}

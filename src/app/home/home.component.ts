@@ -5,7 +5,8 @@ import * as themes from "nativescript-themes";
 
 @Component({
     selector: "Home",
-    templateUrl: "./home.component.html"
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
 
@@ -23,10 +24,21 @@ export class HomeComponent implements OnInit {
     }
 
     onTapThemeOne(): void {
-        // themes.applyThemeCss("css", "theme-one.css")
+        this.changeTheme("theme-one");
+    }
+    
+    onTapThemeTwo(): void {
+        this.changeTheme("theme-two");
     }
 
-    onTapThemeTwo(): void {
-        // themes.applyThemeCss("css", "theme-two.css")
+    private changeTheme(name): void {
+        import(
+            /*  webpackMode: "lazy",
+                webpackInclude: /\.s?css$/,
+                webpackExclude: /_app-styles\.scss/ */
+            `../../themes/${name}`)
+            .then((skinStyles) => {
+                themes.applyThemeCss(skinStyles, name);
+            });
     }
 }

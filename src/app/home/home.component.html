@@ -15,7 +15,7 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">
-    <Button text="Theme one" (tap)="onTapThemeOne()"></Button>
-    <Button text="Theme two" (tap)="onTapThemeTwo()"></Button>
+<GridLayout rows="auto,auto" class="page page-content">
+    <Button row="0" class="one" text="Theme one" (tap)="onTapThemeOne()"></Button>
+    <Button row="1" class="two" text="Theme two" (tap)="onTapThemeTwo()"></Button>
 </GridLayout>
