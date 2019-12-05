@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
+import * as themes from "nativescript-themes";
 
 @Component({
     selector: "Home",
@@ -19,5 +20,13 @@ export class HomeComponent implements OnInit {
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    onTapThemeOne(): void {
+        // themes.applyThemeCss("css", "theme-one.css")
+    }
+
+    onTapThemeTwo(): void {
+        // themes.applyThemeCss("css", "theme-two.css")
     }
 }
